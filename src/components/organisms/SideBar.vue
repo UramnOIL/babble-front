@@ -4,7 +4,7 @@
         <v-list nav dense>
             <v-subheader>Server</v-subheader>
             <v-list-item-group mandatory v-model="selectedContent" color="primary">
-                <v-list-item v-for="(item, i) in serverItems" :key="i">
+                <v-list-item v-for="(item, i) in serverItems" :key="i" @click="changeContent(item.type)">
                     <v-list-item-icon>
                         <v-icon>{{item.icon}}</v-icon>
                     </v-list-item-icon>
@@ -20,21 +20,30 @@
 
 <script lang="ts">
 	import {Component, Emit, Prop, Vue} from "vue-property-decorator";
+	import Content from "@/modules/Content";
+
+	type Item = {
+        text: string;
+        type: Content;
+        icon: string;
+        link: string;
+	}
 
 	@Component
 	export default class SideBar extends Vue {
+
 		@Prop()
 		public selectedContent = 1
 
 		@Emit()
-		changeContent() {
-			//TODO
+		changeContent(type: Content) {
+			this.$emit(type)
 		}
 
-		get serverItems() {
+		get serverItems(): Item[] {
 			return [
-				{text: "Console", icon: "fas fa-terminal", link: "#"},
-				{text: "Dashboard", icon: "fas fa-chart-line", link: "#"}
+				{text: "Console", type: "console", icon: "fas fa-terminal", link: "#"},
+				{text: "Dashboard", type: "dashboard", icon: "fas fa-chart-line", link: "#"}
 			]
 		}
 	}
