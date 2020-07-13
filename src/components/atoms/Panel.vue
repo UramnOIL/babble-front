@@ -1,18 +1,16 @@
 <template>
-    <v-main>
-        <keep-alive>
-            <slot/>
-        </keep-alive>
-    </v-main>
+    <v-card outlined>
+        <slot />
+    </v-card>
 </template>
 
 <script lang="ts">
 	import {Component, Vue} from "vue-property-decorator";
 
 	@Component
-	export default class MainContent extends Vue {
+    export default class Panel extends Vue {
 
-	}
+    }
 </script>
 
 <style scoped>

@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import router from './router'
 import store from './store'
-import Vuetify from 'vuetify'
 import vuetify from './plugins/vuetify';
-import Dashboard from "@/pages/Main.vue";
+import Dashboard from "@/pages/Management.vue";
 
 Vue.config.productionTip = false
 

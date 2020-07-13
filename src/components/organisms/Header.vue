@@ -1,7 +1,6 @@
 <template>
-    <v-toolbar dense app>
-
-        <v-toolbar-title>Babble</v-toolbar-title>
+    <v-app-bar app color="blue darken-2">
+        <v-toolbar-title style="width: 300px" class="ml-0 pl-4">BABBLE</v-toolbar-title>
 
         <v-spacer/>
 
@@ -9,7 +8,7 @@
             <v-icon>fas fa-cog</v-icon>
         </v-btn>
 
-    </v-toolbar>
+    </v-app-bar>
 </template>
 
 <script lang="ts">

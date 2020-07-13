@@ -1,9 +1,11 @@
 <template>
     <v-app>
         <Header/>
-        <SideBar selected-content="dashboard" change-content=""/>
+        <side-bar>
+            <slot name="sidebar"/>
+        </side-bar>
         <MainContent>
-            <component v-bind:is="content"></component>
+            <slot name="main"/>
         </MainContent>
     </v-app>
 </template>
@@ -11,24 +13,16 @@
 <script lang="ts">
 	import {Component, Vue} from 'vue-property-decorator';
 	import Header from "@/components/organisms/Header.vue";
-	import SideBar from "@/components/organisms/SideBar.vue";
 	import MainContent from "@/components/organisms/MainContent.vue";
-	import Content from "@/modules/Content";
-
+	import SideBar from "@/components/organisms/SideBar.vue";
 	@Component({
 		components: {
 			Header,
 			SideBar,
-			MainContent
+            MainContent
 		}
 	})
-
-	export default class Main extends Vue {
-		private content: Content = "dashboard"
-
-		private setContent(content: Content) {
-			this.content = content
-		}
+	export default class DefaultLayout extends Vue {
 	}
 </script>
 

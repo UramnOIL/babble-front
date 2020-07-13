@@ -3,14 +3,15 @@ import VueRouter, {RouteConfig} from 'vue-router'
 
 Vue.use(VueRouter)
 
-import "@/pages/Main.vue"
-import Main from "@/components/organisms/MainContent.vue";
+import "@/pages/Management.vue"
+import MainContent from "@/components/organisms/MainContent.vue";
+
 
 const routes: Array<RouteConfig> = [
 	{
 		path: '/',
-		name: 'Main',
-		component: Main
+		name: 'Management',
+		component: MainContent
 	}
 ]
 
