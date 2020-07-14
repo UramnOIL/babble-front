@@ -1,12 +1,12 @@
 <template>
     <v-container>
-        <ConsoleScreen :lines=lines />
+        <ConsoleScreen :lines=value />
         <ConsoleInput @enter="onEnter" />
     </v-container>
 </template>
 
 <script lang="ts">
-	import {Component, Vue} from "vue-property-decorator";
+	import {Component, Vue, Prop, Emit} from "vue-property-decorator";
 	import ConsoleScreen from "@/components/molecules/ConsoleScreen.vue";
 	import ConsoleInput from "@/components/molecules/ConsoleInput.vue";
 
@@ -14,10 +14,16 @@
 		components: {ConsoleInput, ConsoleScreen}
 	})
 	export default class Console extends Vue {
-		public lines = ["<text style=color:#ff0000>a</text>", "b"]
+		@Prop({required: true})
+		public lines!: string[]
 
-		public onEnter(input: string) {
-			this.lines.push(input)
+		public onEnter(input: string | undefined) {
+			if(typeof input === "string") this.send(input)
+        }
+
+        @Emit()
+        public send(input: string) {
+			return input
         }
 	}
 </script>

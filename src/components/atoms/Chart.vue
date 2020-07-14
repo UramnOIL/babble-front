@@ -6,17 +6,16 @@
 	@Component
 	export default class Chart extends Mixins(Line, mixins.reactiveProp) {
 		@Prop({required: true})
-        public data!: ChartData
+        public chartData!: ChartData
 
-		@Prop()
-		public options: ChartOptions = {}
+		@Prop({required: true})
+		public chartOptions!: ChartOptions
 
 		public mounted() {
-			this.renderChart(this.data, this.options)
+			this.renderChart(this.chartData, this.chartOptions)
 		}
 	}
 </script>
 
 <style scoped>
-
 </style>

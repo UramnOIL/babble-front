@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-text-field @keydown.enter="enter" placeholder="keydown.enter" v-model="input" />
+        <v-text-field @keydown.enter="enter" placeholder="Command" v-model="input" />
     </div>
 </template>
 
@@ -12,7 +12,8 @@
 		private input = ""
 
 		@Emit()
-		enter() {
+		enter(event: KeyboardEvent): string | undefined {
+			if(event.keyCode !== 13) return;
 			const input = this.input;
 			this.input = ""
 			return input

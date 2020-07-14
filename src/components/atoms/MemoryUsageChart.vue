@@ -10,7 +10,7 @@
 	@Component({
 		components: {Chart}
 	})
-	export default class CpuUsageChart extends Vue {
+	export default class MemoryUsageChart extends Vue {
 		@Prop({required: true})
 		usages!: number[]
 
@@ -19,11 +19,11 @@
 			datasets: [
 				{
 					type: "line",
-					label: "CPU Usage",
-					lineTension: 0,
+					label: "Memory Usage",
+                    lineTension: 0,
 					data: this.usages,
 					fill: true,
-					borderColor: "#21DBA7"
+					borderColor: "#27C4C4"
 				}
 			]
 		}
@@ -33,9 +33,9 @@
 			maintainAspectRatio: false,
 			title: {
 				display: true,
-                fontSize: 18,
-                text: "CPU Usage"
-            },
+				fontSize: 18,
+				text: "Memory Usage"
+			},
 			scales: {
 				yAxes: [{
 					ticks: {

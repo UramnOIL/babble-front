@@ -10,20 +10,20 @@
 	@Component({
 		components: {Chart}
 	})
-	export default class CpuUsageChart extends Vue {
+	export default class PlayersChart extends Vue {
 		@Prop({required: true})
-		usages!: number[]
+		players!: number[]
 
 		public data: ChartData = {
-			labels: [60, 50, 40, 30, 20, 10, 0],
+			labels: [120, 105, 90, 75, 60, 45, 30, 15],
 			datasets: [
 				{
 					type: "line",
-					label: "CPU Usage",
+					label: "Players",
 					lineTension: 0,
-					data: this.usages,
+					data: this.players,
 					fill: true,
-					borderColor: "#21DBA7"
+					borderColor: "#1F74D1"
 				}
 			]
 		}
@@ -33,24 +33,24 @@
 			maintainAspectRatio: false,
 			title: {
 				display: true,
-                fontSize: 18,
-                text: "CPU Usage"
-            },
+				fontSize: 18,
+				text: "Players"
+			},
 			scales: {
 				yAxes: [{
 					ticks: {
-						suggestedMax: 100,
+						suggestedMax: 50,
 						suggestedMin: 0,
-						stepSize: 10,
-						callback: function (value) {
-							return value + "%"
+						stepSize: 5,
+						callback: function (value: number) {
+							return value + "人"
 						}
 					}
 				}],
 				xAxes: [{
 					ticks: {
-						callback: function (value) {
-							return value + "秒前"
+						callback: function (value: number) {
+							return value + "分前"
 						}
 					}
 				}]
