@@ -3,7 +3,7 @@
         <v-virtual-scroll
                 :items="lines"
                 :item-height="18"
-                height="500"
+                height="80vh"
         >
             <template v-slot="{ item }">
                 <span class="lines" v-html="item"/>

@@ -3,7 +3,7 @@ import VueRouter, {RouteConfig} from 'vue-router'
 
 Vue.use(VueRouter)
 
-import "@/pages/Management/Management.vue"
+import "@/pages/Management.vue"
 import MainContent from "@/components/organisms/MainContent.vue";
 
 

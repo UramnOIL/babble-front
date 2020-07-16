@@ -1,9 +1,9 @@
 <template>
     <v-app>
-        <Header/>
         <side-bar>
             <slot name="sidebar"/>
         </side-bar>
+        <Header/>
         <MainContent>
             <slot name="main"/>
         </MainContent>

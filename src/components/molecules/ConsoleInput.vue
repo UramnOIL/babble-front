@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-text-field @keydown.enter="enter" placeholder="Command" v-model="input" />
+        <v-text-field @keydown.enter="onEnter" placeholder="Command" v-model="input" />
     </div>
 </template>
 
@@ -11,13 +11,16 @@
 	export default class ConsoleInput extends Vue {
 		private input = ""
 
-		@Emit()
-		enter(event: KeyboardEvent): string | undefined {
+		onEnter(event: KeyboardEvent): void {
 			if(event.keyCode !== 13) return;
-			const input = this.input;
+			this.enter(this.input);
 			this.input = ""
-			return input
 		}
+
+		@Emit()
+        enter(input: string): string {
+			return input
+        }
 	}
 </script>
 

@@ -1,14 +1,14 @@
 <template>
-    <v-main>
-        <slot/>
-    </v-main>
+    <v-container fluid>
+
+    </v-container>
 </template>
 
 <script lang="ts">
 	import {Component, Vue} from "vue-property-decorator";
 
 	@Component
-	export default class MainContent extends Vue {
+    export default class Server extends Vue {
 
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer app :permanent="true">
+    <v-navigation-drawer app :permanent="true" :clipped="$vuetify.breakpoint.lgAndUp">
         <slot />
     </v-navigation-drawer>
 </template>

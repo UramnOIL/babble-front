@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <ConsoleScreen :lines=value />
+        <ConsoleScreen :lines="lines" />
         <ConsoleInput @enter="onEnter" />
     </v-container>
 </template>
@@ -17,8 +17,8 @@
 		@Prop({required: true})
 		public lines!: string[]
 
-		public onEnter(input: string | undefined) {
-			if(typeof input === "string") this.send(input)
+		public onEnter(input: string) {
+			this.send(input)
         }
 
         @Emit()

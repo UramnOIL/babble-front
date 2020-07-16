@@ -31,6 +31,9 @@
 		public options: ChartOptions = {
 			responsive: true,
 			maintainAspectRatio: false,
+            legend: {
+				display: false
+            },
 			title: {
 				display: true,
 				fontSize: 18,

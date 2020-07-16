@@ -10,11 +10,10 @@
             />
         </v-card-title>
         <v-data-table
-                :v-model="selected"
                 :headers="headers"
                 :items="players"
-                :item-key="name"
-                single-select="false"
+                item-key="name"
+                :single-select="false"
                 :search="search"
                 class="elevation-1">
             <template v-slot:item.icon="{ item }">
@@ -31,14 +30,12 @@
 	import {Component, Prop, Vue} from "vue-property-decorator";
 
 	@Component
-	export default class Onlines extends Vue {
+	export default class Participants extends Vue {
 		public search = ""
 
 		public players = [
 			{icon: "fas fa-user", name: "UramnOIL", ping: "5ms", op: true}
         ]
-
-		public selected: number | undefined
 
 		public headers = [
             {text: "Icon", sortable: false, align: "start", value: "icon"},

@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app color="blue darken-2">
+    <v-app-bar app color="blue-grey" :clipped-left="$vuetify.breakpoint.lgAndUp">
         <v-toolbar-title style="width: 300px" class="ml-0 pl-4">BABBLE</v-toolbar-title>
 
         <v-spacer/>
